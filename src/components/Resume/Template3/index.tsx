@@ -11,6 +11,8 @@ import {
   EnvironmentFilled,
   HeartFilled,
   CrownFilled,
+  DollarCircleFilled,
+  StarFilled,
 } from '@ant-design/icons';
 import _ from 'lodash-es';
 import { getLocale } from '@/locale';
@@ -121,7 +123,7 @@ export const Template3: React.FC<Props> = props => {
             )}
             {profile?.zhihu && (
               <div className="github">
-                <ZhihuCircleFilled
+                <DollarCircleFilled
                   style={{ color: theme.color, opacity: 0.85 }}
                 />
                 <span
@@ -247,7 +249,7 @@ export const Template3: React.FC<Props> = props => {
               return skills ? (
                 <div className="skill-item" key={idx.toString()}>
                   <span>
-                    <CheckCircleFilled
+                    <StarFilled
                       style={{ color: '#ffc107', marginRight: '8px' }}
                     />
                     {skills}
