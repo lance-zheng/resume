@@ -70,6 +70,7 @@ export type ResumeConfig = {
     project_content?: string;
     /** 项目时间 */
     project_time?: string;
+    project_skill?: string;
   }>;
 
   /** 个人技能 */

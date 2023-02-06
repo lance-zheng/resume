@@ -121,7 +121,7 @@ export const Template3: React.FC<Props> = props => {
                 </span>
               </div>
             )}
-            {profile?.zhihu && (
+            {/* {profile?.zhihu && (
               <div className="github">
                 <DollarCircleFilled
                   style={{ color: theme.color, opacity: 0.85 }}
@@ -132,25 +132,15 @@ export const Template3: React.FC<Props> = props => {
                     window.open(profile.zhihu);
                   }}
                 >
-                  {profile.zhihu}
+                  {i18n.get('期望薪资')}: {profile.zhihu}
                 </span>
               </div>
-            )}
+            )} */}
             {profile?.workExpYear && (
               <div className="work-exp-year">
                 <ScheduleFilled style={{ color: theme.color, opacity: 0.85 }} />
                 <span>
                   {i18n.get('工作经验')}: {profile.workExpYear}
-                </span>
-              </div>
-            )}
-            {profile?.workPlace && (
-              <div className="work-place">
-                <EnvironmentFilled
-                  style={{ color: theme.color, opacity: 0.85 }}
-                />
-                <span>
-                  {i18n.get('期望工作地')}: {profile.workPlace}
                 </span>
               </div>
             )}
@@ -160,6 +150,16 @@ export const Template3: React.FC<Props> = props => {
                 <span>
                   {i18n.get('职位')}: {profile.positionTitle}
                 </span>
+              </div>
+            )}
+            {profile?.workPlace && (
+              <div className="work-place">
+                {/* <EnvironmentFilled
+                  style={{ color: theme.color, opacity: 0.85 }}
+                />
+                <span>
+                  {i18n.get('期望工作地')}: {profile.workPlace}
+                </span> */}
               </div>
             )}
           </div>
@@ -227,7 +227,7 @@ export const Template3: React.FC<Props> = props => {
             })}
           </CardWrapper>
         ) : null}
-        <CardWrapper
+        {/* <CardWrapper
           title={i18n.get('自我介绍')}
           className="section section-aboutme"
           color={theme.color}
@@ -235,7 +235,7 @@ export const Template3: React.FC<Props> = props => {
           {aboutme.map((d, idx) => (
             <div key={`${idx}`}>{d}</div>
           ))}
-        </CardWrapper>
+        </CardWrapper> */}
         {/* 专业技能 */}
         {skillList?.length ? (
           <CardWrapper
@@ -354,12 +354,22 @@ export const Template3: React.FC<Props> = props => {
                         <b>{i18n.get('项目描述')}：</b>
                         <span>{project.project_desc}</span>
                       </div>
-                      <div className="section-detail">
-                        <b>{i18n.get('主要工作')}：</b>
-                        <span className="project-content">
-                          {project.project_content}
-                        </span>
-                      </div>
+                      {project?.project_skill && (
+                        <div className="section-detail">
+                          <b>{i18n.get('使用技术')}：</b>
+                          <span className="project-content">
+                            {project.project_skill}
+                          </span>
+                        </div>
+                      )}
+                      {project.project_content && (
+                        <div className="section-detail">
+                          <b>{i18n.get('主要工作')}：</b>
+                          <span className="project-content">
+                            {project.project_content}
+                          </span>
+                        </div>
+                      )}
                     </div>
                   ) : null
                 )}
