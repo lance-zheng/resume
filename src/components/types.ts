@@ -48,6 +48,7 @@ export type ResumeConfig = {
     major?: string;
     /** 学历 */
     academic_degree?: string;
+    school_desc?: string;
   }>;
 
   /** 工作经历 */
@@ -60,17 +61,25 @@ export type ResumeConfig = {
 
   /** 项目经历 */
   projectList?: Array<{
-    /** 项目名称 */
     project_name: string;
-    /** 担任角色 */
     project_role: string;
+    project_time?: string;
     /** 描述 */
     project_desc?: string;
     /** 项目内容，负责内容 */
     project_content?: string;
-    /** 项目时间 */
-    project_time?: string;
+
     project_skill?: string;
+
+    project_name1?: string;
+    project_role1?: string;
+    project_time1?: string;
+    project_name2?: string;
+    project_role2?: string;
+    project_time2?: string;
+    project_name3?: string;
+    project_role3?: string;
+    project_time3?: string;
   }>;
 
   /** 个人技能 */

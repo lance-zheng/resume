@@ -1,18 +1,14 @@
 import React from 'react';
 import { Rate, Tag, Badge, Card } from 'antd';
 import {
-  PhoneFilled,
   MailFilled,
   GithubFilled,
-  ZhihuCircleFilled,
   TrophyFilled,
-  CheckCircleFilled,
   ScheduleFilled,
-  EnvironmentFilled,
   HeartFilled,
   CrownFilled,
-  DollarCircleFilled,
   StarFilled,
+  WechatFilled,
 } from '@ant-design/icons';
 import _ from 'lodash-es';
 import { getLocale } from '@/locale';
@@ -98,7 +94,7 @@ export const Template3: React.FC<Props> = props => {
           <div className="profile-list">
             {profile?.mobile && (
               <div className="mobile">
-                <PhoneFilled style={{ color: theme.color, opacity: 0.85 }} />
+                <WechatFilled style={{ color: theme.color, opacity: 0.85 }} />
                 {profile.mobile}
               </div>
             )}
@@ -197,6 +193,7 @@ export const Template3: React.FC<Props> = props => {
                       {end ? ` ~ ${end}` : ` ${i18n.get('至今')}`}
                     </span>
                   </div>
+                  <div className="school-desc">{education.school_desc}</div>
                 </div>
               );
             })}
@@ -267,7 +264,7 @@ export const Template3: React.FC<Props> = props => {
             })}
           </CardWrapper>
         ) : null}
-        {awardList?.length ? (
+        {/* {awardList?.length ? (
           <CardWrapper
             // title={i18n.get('更多信息')}
             title={titleNameMap.awardList}
@@ -290,7 +287,7 @@ export const Template3: React.FC<Props> = props => {
               );
             })}
           </CardWrapper>
-        ) : null}
+        ) : null} */}
       </div>
       <div className="main-info">
         {workExpList?.length
@@ -350,10 +347,59 @@ export const Template3: React.FC<Props> = props => {
                           </Tag>
                         )}
                       </div>
-                      <div className="section-detail">
-                        <b>{i18n.get('项目描述')}：</b>
-                        <span>{project.project_desc}</span>
-                      </div>
+                      {project?.project_name1 && (
+                        <div className="section-info">
+                          <b className="info-name">
+                            {project.project_name1}
+                            <span className="info-time">
+                              {project.project_time1}
+                            </span>
+                          </b>
+                          {project.project_role && (
+                            <Tag color={theme.tagColor}>
+                              {project.project_role1}
+                            </Tag>
+                          )}
+                        </div>
+                      )}
+                      {project?.project_name2 && (
+                        <div className="section-info">
+                          <b className="info-name">
+                            {project.project_name2}
+                            <span className="info-time">
+                              {project.project_time2}
+                            </span>
+                          </b>
+                          {project.project_role && (
+                            <Tag color={theme.tagColor}>
+                              {project.project_role2}
+                            </Tag>
+                          )}
+                        </div>
+                      )}
+                      {project?.project_name3 && (
+                        <div className="section-info">
+                          <b className="info-name">
+                            {project.project_name3}
+                            <span className="info-time">
+                              {project.project_time3}
+                            </span>
+                          </b>
+                          {project.project_role && (
+                            <Tag color={theme.tagColor}>
+                              {project.project_role3}
+                            </Tag>
+                          )}
+                        </div>
+                      )}
+                      {project?.project_desc && (
+                        <div className="section-detail">
+                          <b>{i18n.get('项目描述')}：</b>
+                          <span className="school-desc">
+                            {project.project_desc}
+                          </span>
+                        </div>
+                      )}
                       {project?.project_skill && (
                         <div className="section-detail">
                           <b>{i18n.get('使用技术')}：</b>
