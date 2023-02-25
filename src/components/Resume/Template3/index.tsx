@@ -224,7 +224,7 @@ export const Template3: React.FC<Props> = props => {
             })}
           </CardWrapper>
         ) : null}
-        {/* <CardWrapper
+        <CardWrapper
           title={i18n.get('自我介绍')}
           className="section section-aboutme"
           color={theme.color}
@@ -232,7 +232,7 @@ export const Template3: React.FC<Props> = props => {
           {aboutme.map((d, idx) => (
             <div key={`${idx}`}>{d}</div>
           ))}
-        </CardWrapper> */}
+        </CardWrapper>
         {/* 专业技能 */}
         {skillList?.length ? (
           <CardWrapper
