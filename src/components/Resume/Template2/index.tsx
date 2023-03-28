@@ -1,13 +1,13 @@
 import React from 'react';
 import { Rate, Tag } from 'antd';
 import {
-  PhoneFilled,
   MailFilled,
   GithubFilled,
   ZhihuCircleFilled,
   CheckCircleFilled,
   ScheduleFilled,
   EnvironmentFilled,
+  WechatFilled,
   HeartFilled,
   CrownFilled,
 } from '@ant-design/icons';
@@ -82,7 +82,7 @@ export const Template2: React.FC<Props> = props => {
             <div className="profile-list">
               {profile?.mobile && (
                 <div className="mobile">
-                  <PhoneFilled style={{ color: theme.color, opacity: 0.85 }} />
+                  <WechatFilled style={{ color: theme.color, opacity: 0.85 }} />
                   {profile.mobile}
                 </div>
               )}
@@ -335,7 +335,7 @@ export const Template2: React.FC<Props> = props => {
                   <div className="section-item" key={idx.toString()}>
                     <div className="section-info">
                       <b className="info-name">
-                        {project.project_name}
+                        <span className="abc">{project.project_name}</span>
                         <span className="info-time">
                           {project.project_time}
                         </span>
@@ -345,11 +345,21 @@ export const Template2: React.FC<Props> = props => {
                       )}
                     </div>
                     <div className="section-detail">
-                      <span>{i18n.get('项目描述')}：</span>
-                      <span>{project.project_desc}</span>
+                      <b>{i18n.get('项目描述')}：</b>
+                      <span className="project-content">
+                        {project.project_desc}
+                      </span>
                     </div>
+                    {project?.project_skill && (
+                      <div className="section-detail">
+                        <b>{i18n.get('使用技术')}：</b>
+                        <span className="project-content">
+                          {project.project_skill}
+                        </span>
+                      </div>
+                    )}
                     <div className="section-detail">
-                      <span>{i18n.get('主要工作')}：</span>
+                      <b>{i18n.get('主要工作')}：</b>
                       <span className="project-content">
                         {project.project_content}
                       </span>
