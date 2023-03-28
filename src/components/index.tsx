@@ -89,24 +89,7 @@ export const Page: React.FC = () => {
     }
 
     if (!mode) {
-      const link = `https://github.com/${user}/${user}/tree/${branch}`;
-      fetchResume(lang, branch, user)
-        .then(data => store(data))
-        .catch(() => {
-          Modal.info({
-            title: i18n.get('获取简历信息失败'),
-            content: (
-              <div>
-                请检查用户名 {user} 是否正确或者简历信息是否在
-                <a href={link} target="_blank">{`${link}/resume.json`}</a>下
-              </div>
-            ),
-            okText: i18n.get('进入在线编辑'),
-            onOk: () => {
-              changeMode('edit');
-            },
-          });
-        });
+      changeMode('edit');
     } else {
       getConfig(lang, branch, user).then(data => store(data));
     }
@@ -218,20 +201,20 @@ export const Page: React.FC = () => {
             <React.Fragment>
               <Affix offsetTop={0}>
                 <Button.Group className="btn-group">
-                  <Drawer
+                  {/* <Drawer
                     value={config}
                     onValueChange={onConfigChange}
                     theme={theme}
                     onThemeChange={onThemeChange}
                     template={query.template || 'template2'}
                     onTemplateChange={updateTemplate}
-                  />
-                  <Button type="primary" onClick={copyConfig}>
+                  /> */}
+                  {/* <Button type="primary" onClick={copyConfig}>
                     {i18n.get('复制配置')}
-                  </Button>
-                  <Button type="primary" onClick={exportConfig}>
+                  </Button> */}
+                  {/* <Button type="primary" onClick={exportConfig}>
                     {i18n.get('保存简历')}
-                  </Button>
+                  </Button> */}
                   <Upload
                     accept=".json"
                     showUploadList={false}

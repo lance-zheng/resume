@@ -25,9 +25,7 @@ const Page = () => {
       <Helmet>
         <title>{title}</title>
       </Helmet>
-      <Header />
       <Content />
-      <Footer />
     </React.Fragment>
   );
 };
