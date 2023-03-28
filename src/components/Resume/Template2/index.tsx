@@ -86,6 +86,14 @@ export const Template2: React.FC<Props> = props => {
                   {profile.mobile}
                 </div>
               )}
+              {profile?.positionTitle && (
+                <div className="expect-job">
+                  <HeartFilled style={{ color: theme.color, opacity: 0.85 }} />
+                  <span>
+                    {i18n.get('职位')}: {profile.positionTitle}
+                  </span>
+                </div>
+              )}
               {profile?.email && (
                 <div className="email">
                   <MailFilled style={{ color: theme.color, opacity: 0.85 }} />
@@ -112,14 +120,6 @@ export const Template2: React.FC<Props> = props => {
                   />
                   <span>
                     {i18n.get('工作经验')}: {profile.workExpYear}
-                  </span>
-                </div>
-              )}
-              {profile?.positionTitle && (
-                <div className="expect-job">
-                  <HeartFilled style={{ color: theme.color, opacity: 0.85 }} />
-                  <span>
-                    {i18n.get('职位')}: {profile.positionTitle}
                   </span>
                 </div>
               )}
