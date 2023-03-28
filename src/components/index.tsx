@@ -44,7 +44,7 @@ export const Page: React.FC = () => {
     const searchObj = qs.parse(currentSearch);
     if (!searchObj.template) {
       const search = qs.stringify({
-        template: config?.template || 'template1',
+        template: config?.template || 'template2',
         ...qs.parse(currentSearch),
       });
 
@@ -211,7 +211,7 @@ export const Page: React.FC = () => {
             <Resume
               value={config}
               theme={theme}
-              template={query.template || 'template1'}
+              template={query.template || 'template2'}
             />
           )}
           {mode === 'edit' && (
@@ -223,7 +223,7 @@ export const Page: React.FC = () => {
                     onValueChange={onConfigChange}
                     theme={theme}
                     onThemeChange={onThemeChange}
-                    template={query.template || 'template1'}
+                    template={query.template || 'template2'}
                     onTemplateChange={updateTemplate}
                   />
                   <Button type="primary" onClick={copyConfig}>
