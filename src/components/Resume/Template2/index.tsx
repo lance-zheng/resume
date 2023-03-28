@@ -105,21 +105,6 @@ export const Template2: React.FC<Props> = props => {
                   </span>
                 </div>
               )}
-              {/* {profile?.zhihu && (
-                <div className="github">
-                  <ZhihuCircleFilled
-                    style={{ color: theme.color, opacity: 0.85 }}
-                  />
-                  <span
-                    style={{ cursor: 'pointer' }}
-                    onClick={() => {
-                      window.open(profile.zhihu);
-                    }}
-                  >
-                    {profile.zhihu}
-                  </span>
-                </div>
-              )} */}
               {profile?.workExpYear && (
                 <div className="work-exp-year">
                   <ScheduleFilled
@@ -130,16 +115,6 @@ export const Template2: React.FC<Props> = props => {
                   </span>
                 </div>
               )}
-              {/* {profile?.workPlace && (
-                <div className="work-place">
-                  <EnvironmentFilled
-                    style={{ color: theme.color, opacity: 0.85 }}
-                  />
-                  <span>
-                    {i18n.get('期望工作地')}: {profile.workPlace}
-                  </span>
-                </div>
-              )} */}
               {profile?.positionTitle && (
                 <div className="expect-job">
                   <HeartFilled style={{ color: theme.color, opacity: 0.85 }} />
